@@ -1,20 +1,25 @@
 {% extends 'base.html' %}
-{% block title %}Projects{% endblock %}
+{% block title %}Projects {{ post | truncatechars:30 }}{% endblock %}
 {% block content %}
 {% load static %}
-    <div class="row g-5">
-        <div class="col-md-12">
-            <article class="blog-post">
-                <h2 class="display-5 link-body-emphasis mb-1">Another blog post</h2>
-                <p class="blog-post-meta">December 23, 2020 by <a href="#">Jacob</a></p>
-
-                <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
-                <blockquote>
-                    <p>Longer quote goes here, maybe with some <strong>emphasized text</strong> in the middle of it.</p>
-                </blockquote>
-                <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
-            </article>
+    <link type="text/css" href="{% static 'css/project_detail.css' %}" rel="stylesheet" />
+    <div class="container">
+        <div class="post">
+            <div class="post-header">
+                <h1>{{ post.title }}</h1>
+                <div class="post-meta">
+                    {% comment %} <time datetime="2019-04-01">Апрель, 1</time> {% endcomment %}
+                    <span class="author">Автор: {{ post.author }}</span>
+                </div>
+            </div>
+            <div class="post-image">
+                <img src="https://wonder-day.com/wp-content/uploads/2022/03/wonder-day-avatar-memes-cats-84.jpg">
+            </div>
+            <div class="post-content">
+                <p>{{ post.description }}</p>                
+            </div>
         </div>
     </div>
+
     <hr class="featurette-divider">
-  {% endblock %}
+{% endblock %}

@@ -2,6 +2,7 @@
 {% block title %}Projects{% endblock %}
 {% block content %}
 {% load static %}
+  <link type="text/css" href="{% static 'css/project.css' %}" rel="stylesheet" />
   <div class="container px-4 py-5" id="hanging-icons">
     <h2 class="pb-2 border-bottom">Проекты лаборатории</h2>
     <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
@@ -13,7 +14,7 @@
         <div>
           <h3 class="fs-2 text-body-emphasis">{{ draft.title }}</h3>
           <p>{{ draft.description }}</p>
-          <a href="{% url 'project_detail' post.pk %}" class="btn btn-primary">
+          <a href="{{ draft.get_absolute_url }}" class="btn btn-primary">
             Подробнее
           </a>
         </div>
