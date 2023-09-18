@@ -9,7 +9,13 @@ class Staff(models.Model):
     text = models.TextField(
         'Текст о сотруднике'
     )
-    employee = models.CharField(max_length=200)
+    employee = models.CharField(
+        'Имя сотрудника',
+        max_length=200,
+    )
+    position = models.TextField(
+        'Звание/Должность'
+    )
     image = models.ImageField(
         'Картинка',
         upload_to='staff/',
@@ -25,9 +31,21 @@ class Staff(models.Model):
 
 
 class Project(models.Model):
-    title = models.CharField(max_length=200)
-    description = models.TextField()
-    author = models.CharField(max_length=200)
+    title = models.CharField(
+        'Название проекта',
+        max_length=200
+    )
+    description = models.TextField(
+        'Описание проекта'
+    )
+    author = models.CharField(
+        'Автор проекта',
+        max_length=200,
+    )
+    pub_date = models.DateTimeField(
+        'Дата публикации',
+        auto_now_add=True
+    )
     image = models.ImageField(
         'Картинка',
         upload_to='project/',

@@ -14,7 +14,7 @@ class StaffAdmin(admin.ModelAdmin):
 
 class ProjectAdmin(admin.ModelAdmin):
     # Перечисляем поля, которые должны отображаться в админке
-    list_display = ('pk', 'title', 'author',)
+    list_display = ('pk', 'title', 'author', 'pub_date')
     # Добавляем интерфейс для поиска по тексту постов
     search_fields = ('title',)
     # Это свойство сработает для всех колонок: где пусто — там будет эта строка

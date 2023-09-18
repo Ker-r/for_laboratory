@@ -28,7 +28,9 @@
           <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"/></svg>
         </div>
         <div>
+          <img src="{% static 'img/kisel.jpg' %}" width="100%" height="200">
           {% comment %} <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg> {% endcomment %}
+          <p></p>
           <h3 class="fs-2 text-body-emphasis">{{ last.title }}</h3>
           <p>{{ last.description }}</p>
           <a href="{{ last.get_absolute_url }}" class="btn btn-primary">
