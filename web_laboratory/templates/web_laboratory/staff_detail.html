@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}{{ post.employee | truncatechars:30 }}{% endblock %}
+{% block content %}
+{% load static %}
+    <link type="text/css" href="{% static 'css/staff_detail.css' %}" rel="stylesheet" />
+    <div class="container">
+        <div class="post">
+            <div class="post-image">
+                <img src="{% static 'img/cat.jpg' %}">
+            </div>
+            <div class="post-content">
+                <div class="post-header">
+                    <h1>{{ post.employee }}</h1>
+                    <div class="post-meta">
+                        <span class="author">{{ post.position }}</span>
+                    </div>
+                </div>
+                <p>{{ post.text }}</p>
+            </div>
+        </div>
+    </div>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    <hr class="featurette-divider">
+{% endblock %}

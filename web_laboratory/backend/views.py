@@ -1,11 +1,11 @@
 from django.shortcuts import render
-from django.views.generic import ListView, View, DetailView
+from django.views.generic import ListView, DetailView
 from .models import Staff, Project
 
 
 # Стартовая страница
 def home(request):
-    last_project = Project.objects.all()[:3]
+    last_project = Project.objects.order_by('-pub_date')[:3]
     context = {
         'last_project': last_project,
     }
@@ -13,16 +13,10 @@ def home(request):
 
 
 class ProjectView(ListView):
+    paginate_by = 3
     model = Project
     template_name = 'web_laboratory/projects.html'
     context_object_name = 'project'
-
-    # def get(self, request):
-    #     project = Project.objects.all()
-    #     context = {
-    #         'project': project,
-    #     }
-    #     return render(request, 'web_laboratory/projects.html', context)
 
 
 class ProjectDetail(DetailView):
@@ -32,17 +26,15 @@ class ProjectDetail(DetailView):
     pk_url_kwarg = 'post_pk'
 
 
-    # def get(self, request, pk):
-    #     post = Project.objects.get(id=pk)
-    #     context = {
-    #         'post': post,
-    #     }
-    #     return render(request, 'web_laboratory/project_detail.html', context)
+class StaffView(ListView):
+    paginate_by = 3
+    model = Staff
+    template_name = 'web_laboratory/staff.html'
+    context_object_name = 'staffer'
 
 
-def staff(request):
-    staffer = Staff.objects.all()
-    context = {
-        'staffer': staffer,
-    }
-    return render(request, 'web_laboratory/staff.html', context)
+class StaffDetail(DetailView):
+    model = Staff
+    template_name = 'web_laboratory/staff_detail.html'
+    context_object_name = 'post'
+    pk_url_kwarg = 'post_pk'

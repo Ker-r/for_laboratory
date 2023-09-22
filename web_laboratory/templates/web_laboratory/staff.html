@@ -1,37 +1,28 @@
 {% extends 'base.html' %}
-{% block title %}Staff{% endblock %}
+{% block title %}Projects{% endblock %}
 {% block content %}
 {% load static %}
-    <section class="py-5 text-center container">
-        <div class="row py-lg-5">
-            <div class="col-lg-6 col-md-8 mx-auto">
-            <h1 class="fw-light">Laboratory's staff</h1>
-            <p class="lead text-body-secondary">Здесь вы можете ознакомиться с сотрудниками лаборатории</p>
-            </div>
+  <link type="text/css" href="{% static 'css/project.css' %}" rel="stylesheet" />
+  <div class="container px-4 py-5" id="hanging-icons">
+    <h2 class="pb-2 border-bottom">Сотрудники лаборатории</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      {% for worker in staffer %}
+      <div class="col d-flex align-items-start">
+        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"/></svg>
         </div>
-        </section>
-    {% for workers in staffer %}
-        <div class="album py-5 bg-body-tertiary">
-        <div class="container">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-            <div class="col">
-                <div class="card shadow-sm">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="350" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-                <div class="card-body">
-                    <p>{{ workers.employee }}</p>
-                    <p class="card-text">{{ workers.text }}</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Читать больше</button>
-                    </div>
-                    </div>
-                </div>
-                </div>
-            </div>
-            </div>
+        <div>
+          <img src="{% static 'img/cat.jpg' %}" width="100%" height="350">
+          <p></p>
+          <h3 class="fs-2 text-body-emphasis">{{ worker.employee }}</h3>
+          <p>{{ worker.position }}</p>
+          <a href="{{ worker.get_absolute_url }}" class="btn btn-primary">
+            Подробнее
+          </a>
+          <p></p>
         </div>
-        </div>
-    {% endfor %} 
-
-    <hr class="featurette-divider">
+      </div>
+      {% endfor %} 
+    </div>
+  </div>
 {% endblock %}

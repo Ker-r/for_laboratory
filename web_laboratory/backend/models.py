@@ -25,7 +25,11 @@ class Staff(models.Model):
     def __str__(self):
         return self.text
 
+    def get_absolute_url(self):
+        return reverse('staff_detail', kwargs={'post_pk': self.pk})
+
     class Meta:
+        ordering = ['id']
         verbose_name = 'Сотрудник'
         verbose_name_plural = 'Сотрудники'
 
@@ -59,5 +63,6 @@ class Project(models.Model):
         return reverse('project_detail', kwargs={'post_pk': self.pk})
 
     class Meta:
+        ordering = ['-pub_date']
         verbose_name = 'Проект'
         verbose_name_plural = 'Проекты'

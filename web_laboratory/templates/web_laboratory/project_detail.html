@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}Projects {{ post | truncatechars:30 }}{% endblock %}
+{% block title %}{{ post.title | truncatechars:30 }}{% endblock %}
 {% block content %}
 {% load static %}
     <link type="text/css" href="{% static 'css/project_detail.css' %}" rel="stylesheet" />
@@ -8,7 +8,7 @@
             <div class="post-header">
                 <h1>{{ post.title }}</h1>
                 <div class="post-meta">
-                    {% comment %} <time datetime="2019-04-01">Апрель, 1</time> {% endcomment %}
+                    <time datetime="2019-04-01">{{ post.pub_date|date:"d E Y" }}</time>
                     <span class="author">Автор: {{ post.author }}</span>
                 </div>
             </div>
