@@ -1,12 +1,15 @@
 {% extends 'base.html' %}
 {% block title %}{{ post.employee | truncatechars:30 }}{% endblock %}
 {% block content %}
+{% load thumbnail %}
 {% load static %}
     <link type="text/css" href="{% static 'css/staff_detail.css' %}" rel="stylesheet" />
     <div class="container">
         <div class="post">
             <div class="post-image">
-                <img src="{% static 'img/cat.jpg' %}">
+                {% thumbnail post.image "250x250" crop="center" upscale=True as im %}    
+                <img class="card-img my-2" src="{{ im.url }}">
+                {% endthumbnail %}
             </div>
             <div class="post-content">
                 <div class="post-header">

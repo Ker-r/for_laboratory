@@ -1,12 +1,13 @@
 {% extends 'base.html' %}
 {% block title %}Laboratory{% endblock %}
 {% block content %}
+{% load thumbnail %}
 {% load static %}
   <link type="text/css" href="{% static 'css/project_detail.css' %}" rel="stylesheet" />
   <div class="container col-xxl-8 px-4 py-5">
     <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
       <div class="col-10 col-sm-8 col-lg-6">
-        <img src="bootstrap-themes.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+        <img src="{% static 'img/Kis.jpg' %}" width="400" height="400">
       </div>
       <div class="col-lg-6">
         <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Website for Laboratory</h1>
@@ -28,7 +29,9 @@
           <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"/></svg>
         </div>
         <div>
-          <img src="{% static 'img/kisel.jpg' %}" width="100%" height="200">
+          {% thumbnail last.image "250x250" crop="center" upscale=True as im %}    
+          <img class="card-img my-2" src="{{ im.url }}">
+          {% endthumbnail %}
           {% comment %} <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg> {% endcomment %}
           <p></p>
           <h3 class="fs-2 text-body-emphasis">{{ last.title }}</h3>
@@ -54,7 +57,7 @@
         <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
       </div>
       <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
+        <img src="{% static 'img/Sergei.jpg' %}" width="270" height="350">
       </div>
     </div>
 
@@ -69,7 +72,7 @@
         <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
       </div>
       <div class="col-md-5 order-md-1">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
+        <img src="{% static 'img/Leonid.jpg' %}" width="270" height="350">
       </div>
     </div>
 
@@ -84,11 +87,10 @@
         <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
       </div>
       <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
+        <img src="{% static 'img/Artem.jpg' %}" width="270" height="350">
       </div>
     </div>
 
-    <hr class="featurette-divider">
 
     <!-- /END THE FEATURETTES -->
 
