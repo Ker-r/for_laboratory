@@ -13,7 +13,7 @@
           <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"/></svg>
         </div>
         <div>
-          {% thumbnail worker.image "250x250" crop="center" upscale=True as im %}    
+          {% thumbnail worker.image "250x300" crop="center" upscale=True as im %}    
           <img class="card-img my-2" src="{{ im.url }}">
           {% endthumbnail %}
           <p></p>

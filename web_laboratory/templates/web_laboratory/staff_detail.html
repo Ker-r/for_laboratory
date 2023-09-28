@@ -7,7 +7,7 @@
     <div class="container">
         <div class="post">
             <div class="post-image">
-                {% thumbnail post.image "250x250" crop="center" upscale=True as im %}    
+                {% thumbnail post.image "250x300" crop="center" upscale=True as im %}    
                 <img class="card-img my-2" src="{{ im.url }}">
                 {% endthumbnail %}
             </div>

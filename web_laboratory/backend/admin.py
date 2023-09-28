@@ -5,9 +5,9 @@ from .models import Staff, Project
 
 class StaffAdmin(admin.ModelAdmin):
     # Перечисляем поля, которые должны отображаться в админке
-    list_display = ('pk', 'text', 'employee',)
+    list_display = ('pk', 'employee', 'position', )
     # Добавляем интерфейс для поиска по тексту постов
-    search_fields = ('text',)
+    search_fields = ('employee',)
     # Это свойство сработает для всех колонок: где пусто — там будет эта строка
     empty_value_display = '-пусто-'
 

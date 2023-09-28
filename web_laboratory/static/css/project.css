@@ -46,11 +46,6 @@
 .list-pages .page-num:hover {
 	box-shadow: 3px 3px 1px #d0d0d0; 
 }
-.list-pages .page-num-selected {
-	border: none;
-	color: #000;
-	font-size: 20px;
-}
 .list-pages .page-num-selected:hover {
 	box-shadow: none; 
 }
