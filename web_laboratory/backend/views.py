@@ -7,7 +7,9 @@ from .models import Staff, Project
 def home(request):
     ''' Главная страница '''
     last_project = Project.objects.order_by('-pub_date')[:3]
+    staff = Staff.objects.all()
     context = {
+        'staff': staff,
         'last_project': last_project,
     }
     return render(request, 'web_laboratory/home.html', context)
