@@ -3,6 +3,7 @@
 {% block content %}
 {% load thumbnail %}
 {% load static %}
+{% load static i18n %}
   <link type="text/css" href="{% static 'css/project_detail.css' %}" rel="stylesheet" />
   <div class="container col-xxl-8 px-4 py-5">
     <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
@@ -11,7 +12,7 @@
       </div>
       <div class="col-lg-6">
         <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Website for Laboratory</h1>
-        <p class="lead">Здесь вы можете ознакомиться с сотрудниками и проектами лаборатории</p>
+        <p class="lead">{% trans 'Здесь вы можете ознакомиться с сотрудниками и проектами лаборатории' %}</p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
         </div>
       </div>
@@ -37,7 +38,7 @@
           <h3 class="fs-2 text-body-emphasis">{{ last.title }}</h3>
           <p>{{ last.description }}</p>
           <a href="{{ last.get_absolute_url }}" class="btn btn-primary">
-            Подробнее
+            {% trans 'Подробнее' %}
           </a>
         </div>
       </div>
@@ -57,7 +58,7 @@
         <p class="lead">{{ worker.position }}</p>
         
         <a href="{{ worker.get_absolute_url }}" class="btn btn-primary">
-          Подробнее
+          {% trans 'Подробнее' %}
         </a>
       </div>
       <div class="col-md-5">

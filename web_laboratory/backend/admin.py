@@ -1,9 +1,13 @@
 from django.contrib import admin
+from modeltranslation.admin import TranslationAdmin
+
 from .models import Staff, Project
+
 # Register your models here.
 
 
-class StaffAdmin(admin.ModelAdmin):
+@admin.register(Staff)
+class StaffAdmin(TranslationAdmin):
     # Перечисляем поля, которые должны отображаться в админке
     list_display = ('pk', 'employee', 'position', )
     # Добавляем интерфейс для поиска по тексту постов
@@ -12,7 +16,8 @@ class StaffAdmin(admin.ModelAdmin):
     empty_value_display = '-пусто-'
 
 
-class ProjectAdmin(admin.ModelAdmin):
+@admin.register(Project)
+class ProjectAdmin(TranslationAdmin):
     # Перечисляем поля, которые должны отображаться в админке
     list_display = ('pk', 'title', 'author', 'pub_date')
     # Добавляем интерфейс для поиска по тексту постов
@@ -23,5 +28,5 @@ class ProjectAdmin(admin.ModelAdmin):
 
 # При регистрации модели Staff источником конфигурации для неё назначаем
 # класс StaffAdmin
-admin.site.register(Staff, StaffAdmin)
-admin.site.register(Project, ProjectAdmin)
+# admin.site.register(Staff, StaffAdmin)
+# admin.site.register(Project, ProjectAdmin)

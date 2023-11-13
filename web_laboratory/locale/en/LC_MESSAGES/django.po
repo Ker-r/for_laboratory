@@ -1,0 +1,37 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-13 14:06+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: templates/web_laboratory/home.html:15
+msgid "Здесь вы можете ознакомиться с сотрудниками и проектами лаборатории"
+msgstr "Here you can get acquainted with the staff and projects of the laboratory"
+
+#: templates/web_laboratory/home.html:42 templates/web_laboratory/home.html:62
+#: templates/web_laboratory/projects.html:23
+#: templates/web_laboratory/staff.html:23
+msgid "Подробнее"
+msgstr "More detailed"
+
+#: templates/web_laboratory/projects.html:8
+msgid "Проекты лаборатории"
+msgstr "Laboratory projects"
+
+#: templates/web_laboratory/staff.html:8
+msgid "Сотрудники лаборатории"
+msgstr "Laboratory staff"
