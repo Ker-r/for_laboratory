@@ -35,8 +35,8 @@
 ``` python manage.py createsuperuser ```
 
 ### Для добавления новых записей на английском 
-django-admin makemessages -l en -e html
-django-admin compilemesseges
+``` django-admin makemessages -l en -e html ```
+``` django-admin compilemesseges ```
 
 
 Автор проекта: Ефремова Каролина
